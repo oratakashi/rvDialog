@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.MaterialComponents.DayNight"
+    android:background="@drawable/background_white"
+    android:alpha="0.8"
+    android:backgroundTintMode="multiply"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:fontFamily="@font/bold"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDialog"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/tvTitle"/>
+
+    <View
+        android:id="@+id/vLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorDivider"
+        android:layout_below="@id/rvDialog"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/vLine">
+
+        <TextView
+            android:id="@+id/btnNegative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:fontFamily="@font/regular"
+            android:textAlignment="center"/>
+
+        <View
+            android:id="@+id/vertical_divider"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:background="@color/colorDivider" />
+
+        <TextView
+            android:id="@+id/btnPositive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/yes"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:fontFamily="@font/regular"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
